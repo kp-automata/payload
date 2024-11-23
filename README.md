@@ -6,14 +6,14 @@ differ slightly depending on whether the sensing instrument is located on Earth'
 
 The first logical step in generating AOD is the Beer-Lambert-Law.
 
-
+$$V_{\lambda} = V$$
 
 
 
 With the goal of extracting information solely targeting aerosol content, several other atmospheric elements need to subtracted from the initial
 *total* measurement. 
 
-Finally, we consider the *angstrom parameter*. This will allow us to discern the size distribution of aerosol in our results. If we take the first derivative of the logarithmic ratio of the above aerosol *total* measurement and the given wavelength we get the angstrom parameter. Values of this parameter greater than 2.0 show us finer particulates while the parameter being close to zero alerts us to coarse particulates. 
+Finally, we consider the *angstrom parameter*. This will allow us to discern the size distribution of aerosol in our results. If we take the first derivative of the logarithmic ratio of the above aerosol *total* measurement and the given wavelength we get the angstrom parameter, typically referred to as $$\alpha$$. Values of $$\alpha$$ $$\gt$$ 2.0 show us finer particulates while $$\alpha$$ being close to zero alerts us to the presense of coarse particulates. 
 
 
 #### Uses
