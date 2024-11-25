@@ -33,8 +33,7 @@ Finally, we consider the *angstrom parameter*. This will allow us to discern the
 ####  Mission Requirements
 
 ### Code 
-At first glance it seems like there are two distinct routes we can go regarding post-processing of the collected data. We are presented with the choice between MATLAB's [hyperspectral imaging tools](https://www.mathworks.com/help/images/hyperspectral-image-processing.html)or the [spectral python module](https://www.spectralpython.net/) (SPy). However, this is a false dichotmy because we can actually use MATLAB's python engine to embedded calls to MATLAB's API. 
-
+At first glance, it seems like there are two distinct routes we can go regarding the post-processing of the collected data. We are presented with the choice between MATLAB's [hyperspectral imaging tools](https://www.mathworks.com/help/images/hyperspectral-image-processing.html) or the [spectral python module](https://www.spectralpython.net/) (SPy). However, this is a false dichotomy because we can actually use the MATLAB engine within our python script and embed calls to MATLAB's image processing toolbox as needed. This gives us flexibility if we run into features not available in either environment.
 
 #### Resources
 
