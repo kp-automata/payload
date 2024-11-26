@@ -18,13 +18,22 @@ Finally, we consider the *angstrom parameter*. This will allow us to discern the
 
 
 #### Practical Uses
-- climate data/analysis
+AOD is indispensable regarding matters of climate data and analysis. Especially if we want to make statements regarding the overall aerosol effect on climate because we need to distinguish natural and anthropogenic aerosols. The spatial distribution discerned from AOD as well as the separation of particle size from the angstrom parameter allows us to do this. 
 
 
-- correcting satellite images
+correcting satellite images
 
 
 #### Satellite Measurement 
+
+Remote sensing active/passive distiction
+
+
+
+##### Algorithms
+Land
+
+Ocean 
 
 
 ### Hyperspectral Imaging
