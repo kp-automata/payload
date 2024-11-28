@@ -48,6 +48,8 @@ Alternatively, there is existing research and methods for maintaining the high d
 ####  Mission Requirements
 Effcient design and testing of the overall payload optical system...cube sat
 
+Simulations will be vital for ensuring to robustness of the optical system. Physical ray tracing can be used (OSLO). OpenVDB offers clear advantages given it is designed for computer graphics applications. 
+
 ### Code 
 From a purely practical standpoint, it seems like there are two distinct routes we can go regarding the post-processing of the collected data. We are presented with the choice of MATLAB's [hyperspectral imaging tools](https://www.mathworks.com/help/images/hyperspectral-image-processing.html) and the [spectral python module](https://www.spectralpython.net/) (SPy). 
 
