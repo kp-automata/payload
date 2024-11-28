@@ -1,8 +1,8 @@
 # Aerosol Optical Depth and Hyperspectral Imaging
 
-### Mathematical Defintion of Aerosol Optical Depth (AOD)
+### Mathematical Definition of Aerosol Optical Depth (AOD)
 In essence, aerosol optical depth is the measurement of various aerosols within a given atmospheric vertical column. Specific definitions can 
-differ slightly depending on whether the sensing instrument is located on Earth's surface or above in a low-earth-orbit satellite. Notably, AOD is the natural logarithmic *ratio* of incident to transmitted radiant power through a given wavelength sample. It is not to be considered in terms of dimensionality/area. It has also been described as unitless extinction coefficient that varies based on the given wavelength. 
+differ slightly depending on whether the sensing instrument is located on Earth's surface or above in a low-earth-orbit satellite. Notably, AOD is the natural logarithmic *ratio* of incident to transmitted radiant power through a given wavelength sample. It is not to be considered in terms of dimensionality/area. It has also been described as unit-less extinction coefficient that varies based on the given wavelength. 
 
 The first logical step in generating AOD is through the Beer-Lambert-Law.
 
@@ -14,19 +14,19 @@ With the goal of extracting information solely targeting aerosol content, severa
 *total* measurement. 
 
 
-Finally, we consider the *angstrom parameter*. This will allow us to discern the size distribution of aerosol in our results. If we take the first derivative of the logarithmic ratio of the above aerosol *total* measurement and the given wavelength we get the target angstrom parameter, typically referred to as $$\alpha$$. Values of $$\alpha$$ $$\gt$$ 2.0 show us finer particulates, while $$\alpha$$ being close to zero alerts us to the presence of coarse particulates. 
+Finally, we consider the *angstrom parameter*. This will allow us to discern the size distribution of aerosol in our results. If we take the first derivative of the logarithmic ratio of the above aerosol *total* measurement and the given wavelength we get the target angstrom parameter, typically referred to as $$\alpha$$. Values of $$\alpha$$ $$\gt$$ 2.0 show us finer particulates, while $$\alpha$$ being close to zero alerts us to the presence of coarse particulates. In the field, the angstrom parameter is also called aerosol particle size parameter (APSP). APSP ultimately formalizes the dependence of AOD on wavelength. 
 
 
 #### Practical Uses
-AOD is indispensable regarding matters of climate data and analysis. Especially if we want to make statements regarding the overall aerosol effect on climate because we need to distinguish natural and anthropogenic aerosols. The spatial distribution discerned from AOD as well as the separation of particle size from the angstrom parameter allows us to do this. 
+Aerosol optical depth is indispensable regarding matters of climate data and analysis--especially if we want to make statements regarding the overall aerosol effect on climate. This goal requires a formal method to distinguish natural and anthropogenic aerosols. The spatial distribution discerned from aerosol optical depth as well as the separation of particle size from the angstrom parameter is optimal for these types of statements. Furthermore, AOD data gathered via remote sensing allows the collection of concrete evidence supporting claims that entities are emitting pollutants into the atmosphere. For example, the burning of biomass in the context of agriculture practices could be monitored and analyzed after the fact via AOD collection. 
 
 
-correcting satellite images
+#### Satellite Measurement Considerations
+
+Satellite measurement of aerosol optical depth gives us all the benefits of 
+*remote sensing* of data and can be enhanced by auxiliary on site scientific data collected on land. For traditional AOD algorithms we are just concerned with optical sensing. In the context of satellites, we need to introduce a few terms. Specifically *resolution* refers to a class of characteristics to describe the nature and integrity of our data. Temporal resolution is the interval of satellite overflights. For the AOD algorithm, sun reflectance is a key component so the temporal resolution would ideally be fitted for the mission requirements. For goals described in the practical uses section, revisiting the same global area is most likely needed for salient scientific observations. 
 
 
-#### Satellite Measurement 
-
-Remote sensing active/passive distiction
 
 
 
@@ -38,6 +38,7 @@ Ocean
 
 ### Hyperspectral Imaging
 #### Overview 
+full electromagnetic spectrum. spectral resolution (i.e. optical sensors) panchromatic/multispectral/hyperspectral. hyperspectral approximates the continuous spectral with many bands and very low bandwidth nanometers
 
 ####  Mission Requirements
 
