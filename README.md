@@ -46,11 +46,12 @@ number of bands, spectral channels, and pixel lat/long dimensions).From a missio
 Alternatively, there is existing research and methods for maintaining the high dimensionality of HSI via voxel storage. Combined with contemporary transformers in machine learning we can balance the dialectic between data fidelity and the efficiency of computer vision. 
 
 ####  Mission Requirements
+Effcient design and testing of the overall payload optical system...cube sat
 
 ### Code 
 From a purely practical standpoint, it seems like there are two distinct routes we can go regarding the post-processing of the collected data. We are presented with the choice of MATLAB's [hyperspectral imaging tools](https://www.mathworks.com/help/images/hyperspectral-image-processing.html) and the [spectral python module](https://www.spectralpython.net/) (SPy). 
 
-SPy is easily accessiable with clear documentation and open source code. Any python code has the added advantage of utilizing other modules in the given programming eviromment for data shaping and analysis. MATLAB's toolbox on the other hand requires an active lisence and is best expressed inside the application with Mathwork's profpiertary scripting language. However, it is more user friendly for non-programmers. Also liscneing is  a non-issue at our given academic institituion. Thankfully we can avoid this quandry altogether. 
+SPy is easily accessiable with clear documentation and open source code. Any python code has the added advantage of utilizing other modules in the given programming eviromment for data shaping and analysis. MATLAB's toolbox on the other hand requires an active lisence and is best expressed inside the application with Mathwork's profpiertary scripting language. However, it is more user friendly for non-programmers. It also has robust testing suites for closed systems. Also liscneing is  a non-issue at our given academic institituion. Thankfully we can avoid this quandry altogether. 
 It is completely possible to use the MATLAB engine within our python script and embed calls to MATLAB's image processing toolbox as needed. This gives us flexibility if we run into features not available in either environment. Find a working example in the hyperspectral.py script in this repository.
 
 For machine learning purposes for spectral signature classification we can also go the route of using OpenCV's C++ API. This approach is ideal for performance purposes given the density of hyperspectral data. OpenCV has a multidude of feature extraction functionality like PCA...  
