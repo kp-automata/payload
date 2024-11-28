@@ -24,28 +24,37 @@ Aerosol optical depth is indispensable regarding matters of climate data and ana
 #### Satellite Measurement Considerations
 
 Satellite measurement of aerosol optical depth gives us all the benefits of 
-*remote sensing* of data and can be enhanced by auxiliary on site scientific data collected on land. For traditional AOD algorithms we are just concerned with optical sensing. In the context of satellites, we need to introduce a few terms. Specifically *resolution* refers to a class of characteristics to describe the nature and integrity of our data. Temporal resolution is the interval of satellite overflights. For the AOD algorithm, sun reflectance is a key component so the temporal resolution would ideally be fitted for the mission requirements. For goals described in the practical uses section, revisiting the same global area is most likely needed for salient scientific observations. 
+*remote sensing* of data and can be enhanced by auxiliary on site scientific data collected on land. For traditional AOD algorithms, we are just concerned with optical sensing versus other modalitites. In the context of satellites, we need to introduce a few terms. Specifically *resolution* refers to a class of characteristics to describe the nature and integrity of our data. Temporal resolution is the interval of satellite overflights. For the AOD algorithm, sun reflectance is a key component so the temporal resolution would ideally be fitted for the mission requirements. For goals described in the practical uses section, revisiting the same global area is most likely needed for salient scientific observations. 
 
 
 
 
 
-##### Algorithms
-Land
+##### General Algorithm
+AOD gathered from a satellite follows a predetremined algorithm. First the type of sensor is detected
 
-Ocean 
+Land (specific name)
+
+Ocean (specific  name)
 
 
 ### Hyperspectral Imaging
 #### Overview 
-full electromagnetic spectrum. spectral resolution (i.e. optical sensors) panchromatic/multispectral/hyperspectral. hyperspectral approximates the continuous spectral with many bands and very low bandwidth nanometers
+Hyperspectral imaging approximates the continuous spectral with many bands and very low bandwidth nanometers. The granularity of hyperspectral imagers allow us to detect specific material signatures. The output is a datacube, with of a dimensionality of $$_/Rp$$ (p represents the
+number of bands, spectral channels, and pixel lat/long dimensions).From a mission perspective, this high dimensionality can pose problems for storage constraints on board the satellite. It might be advantageous to maximize feature extraction to reduce the data density and lean on machine learning method for the post process image data classification. However, this approach for processing hyperspectral imagery (HSI) comes with clear disadvantages. We lose lose fidelity of the original data cube and suffer the consequence of a lack of classification/training data sets in the scientific community.  
+
+Alternatively, there is existing research and methods for maintaining the high dimensionality of HSI via voxel storage. Combined with contemporary transformers in machine learning we can balance the dialectic between data fidelity and the efficiency of computer vision. 
 
 ####  Mission Requirements
 
 ### Code 
-At first glance, it seems like there are two distinct routes we can go regarding the post-processing of the collected data. We are presented with the choice between MATLAB's [hyperspectral imaging tools](https://www.mathworks.com/help/images/hyperspectral-image-processing.html) or the [spectral python module](https://www.spectralpython.net/) (SPy). However, this is a false dichotomy because we can actually use the MATLAB engine within our python script and embed calls to MATLAB's image processing toolbox as needed. This gives us flexibility if we run into features not available in either environment. Find a working example in the hyperspectral.py script in this repository.
+From a purely practical standpoint, it seems like there are two distinct routes we can go regarding the post-processing of the collected data. We are presented with the choice of MATLAB's [hyperspectral imaging tools](https://www.mathworks.com/help/images/hyperspectral-image-processing.html) and the [spectral python module](https://www.spectralpython.net/) (SPy). 
 
-For machine learning purposes for spectral signature classification we can also go the route of using OpenCV's C++ API. This approach is ideal for performance purposes given the density of hyperspectral data. 
+SPy is easily accessiable with clear documentation and open source code. Any python code has the added advantage of utilizing other modules in the given programming eviromment for data shaping and analysis. MATLAB's toolbox on the other hand requires an active lisence and is best expressed inside the application with Mathwork's profpiertary scripting language. However, it is more user friendly for non-programmers. Also liscneing is  a non-issue at our given academic institituion. Thankfully we can avoid this quandry altogether. 
+It is completely possible to use the MATLAB engine within our python script and embed calls to MATLAB's image processing toolbox as needed. This gives us flexibility if we run into features not available in either environment. Find a working example in the hyperspectral.py script in this repository.
+
+For machine learning purposes for spectral signature classification we can also go the route of using OpenCV's C++ API. This approach is ideal for performance purposes given the density of hyperspectral data. OpenCV has a multidude of feature extraction functionality like PCA...  
+Novelly, regarding voxel data we could look into OpenVDB.
 
 
 
