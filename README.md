@@ -3,7 +3,7 @@
 ### Mathematical Definition of Aerosol Optical Depth (AOD)
 In essence, aerosol optical depth is the measurement of various aerosols within a given atmospheric vertical column. Semantic definitions can differ slightly depending on whether the sensing instrument is located on Earth's surface or above in a low-earth-orbit satellite. To be precise, AOD is the natural logarithmic *ratio* of incident to [transmitted radiant power](https://goldbook.iupac.org/terms/view/A00028) through a given wavelength sample. It is not to be considered in terms of dimensionality/area. It has also been described as unit-less extinction coefficient that varies based on the given wavelength. 
 
-The first logical step in generating AOD is through the Beer-Lambert-Law.
+The first logical step in [generating AOD](https://aeronet.gsfc.nasa.gov/new_web/PDF/afi.pdf) is through the Beer-Lambert-Law.
 
 $$V(\lambda) = V_o(\lambda)d^2 exp[-t(\lambda)_{TOT} * m]$$
 
