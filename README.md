@@ -18,24 +18,29 @@ Finally, we consider the *angstrom parameter*. This will allow us to discern the
 
 
 #### Practical Uses
-Aerosol optical depth is indispensable regarding matters of climate data and analysis--especially if we want to make statements regarding the overall aerosol effect on climate. This goal requires a formal method to distinguish natural and anthropogenic aerosols. The spatial distribution discerned from aerosol optical depth as well as the separation of particle size from the angstrom parameter is optimal for these types of statements. Furthermore, AOD data gathered via remote sensing allows the collection of concrete evidence supporting claims that entities are emitting pollutants into the atmosphere. For example, the burning of biomass in the context of agriculture practices could be monitored and analyzed after the fact via AOD collection. 
+Aerosol optical depth is indispensable regarding matters of climate data and analysis—especially if we want to make statements regarding the overall aerosol effect on climate. This epistemological goal requires a formal method to distinguish natural and anthropogenic aerosols. The spatial distribution discerned from aerosol optical depth as well as the separation of particle size from the angstrom parameter is optimal for these types of statements. Furthermore, AOD data gathered via remote sensing allows the collection of concrete evidence supporting claims that entities are emitting pollutants into the atmosphere. For example, the burning of biomass in the context of agriculture practices could be monitored and analyzed after the fact via AOD collection. 
 
 
 #### Satellite Measurement Considerations
 
 Satellite measurement of aerosol optical depth gives us all the benefits of 
-*remote sensing* of data and can be enhanced by auxiliary on site scientific data collected on land. For traditional AOD algorithms, we are just concerned with optical sensing versus other modalitites. In the context of satellites, we need to introduce a few terms. Specifically *resolution* refers to a class of characteristics to describe the nature and integrity of our data. Temporal resolution is the interval of satellite overflights. For the AOD algorithm, sun reflectance is a key component so the temporal resolution would ideally be fitted for the mission requirements. For goals described in the practical uses section, revisiting the same global area is most likely needed for salient scientific observations. 
+*remote sensing* of data and can be enhanced by auxiliary on site scientific data collected on land. For traditional AOD algorithms, we will concern ourself just with optical sensing versus other modalities that can be measured via satellite. 
 
+In the context of satellites, we need to introduce some specific vernacular to clarify mission requirements. Specifically *resolution* refers to a class of characteristics to describe the nature and integrity of our data. 
 
+Out of the various types of resolution (spatial, temporal, spectral, radiometric), temporal resolution is integral to ensuring fidelity of the AOD capture. Temporal resolution is the interval of satellite overflights. For the AOD algorithm, sun reflectance is a key component so the temporal resolution would ideally be fitted for the mission requirements. For goals described in the practical uses section, revisiting the same global area is most likely needed for salient scientific observations. The reliance on solar radiation characterizes the AOD remote sensing approach as *passive* instead of *active*.
 
+Spatial resolution of the eventual pixel dimensions informs the general AOD algorithm below regarding the coefficient look up tables. The actual location/geometry of the satellite has a fundamental role in the spatial resolution. The [vertical nadir](https://darktarget.gsfc.nasa.gov/algorithm-intro) is the space directly below the satellite. If sensor information extends beyond the direct nadir, pixel overlap occurs as well as distortion. In order to be efficient with bandwidth this extraneous data can be chosen not be aggregated. 
 
+[Radiometric resolution](https://www.usgs.gov/faqs/what-radiometric-resolution) technical details are sensor specific and illustrate the overall greyscale value range. The higher the bit depth, the higher precision of floating point pixel values of they greyscale image.
+
+Specifics regarding spectral resolution will be discussed below on the topic of the hyperspectral imager setup.
 
 ##### General Algorithm
-AOD gathered from a satellite follows a predetremined algorithm. First the type of sensor is detected
+AOD gathered from a satellite follows a predetermined algorithm. First the type of on-board sensor is detected Advanced Baseline Imager [(ABI)](https://www.earthdata.nasa.gov/data/instruments/abi) or Visible Infrared Imaging Radiometer Suite [(VIIRS)](https://ladsweb.modaps.eosdis.nasa.gov/missions-and-measurements/viirs/).The appropriate coefficients are retrieved from a look up table. All algorithmic decisions made are informed by external geolocation and appropriate weather data as well as spatial resolution of the pixels. Next, memory is then allocated for the input pixel. Using the cumulative data and mask strategies the pixel is identified as either a land or water pixel if the conditions are right. 
+*Dark Target* is the specific name for land retrieval whilst *Deep Blue* is for water pixels. From the look up table, atmosphereic or sun glint stregies fork the algorithm for accurate AOD retriveal/calculation. Quality is then screened for the pixels samples. Artifacts like cirrus clouds, snow/ice, sun glint and shallow water have a direct effect on the confidence of the obersaved AOD data. Finally, the output value of the pixel is recorded and the algorithmic loop starts over again the input pixel stage. 
 
-Land (specific name)
 
-Ocean (specific  name)
 
 
 ### Hyperspectral Imaging
