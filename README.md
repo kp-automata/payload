@@ -33,7 +33,7 @@ Spatial resolution of the eventual pixel dimensions informs the general AOD algo
 
 Specifics regarding spectral resolution will be discussed below on the topic of the hyperspectral imager setup.
 
-##### General Algorithm
+#### General Algorithm
 AOD gathered from a satellite follows a predetermined algorithm. First the type of on-board sensor is detected Advanced Baseline Imager [(ABI)](https://www.earthdata.nasa.gov/data/instruments/abi) or Visible Infrared Imaging Radiometer Suite [(VIIRS)](https://ladsweb.modaps.eosdis.nasa.gov/missions-and-measurements/viirs/).The appropriate coefficients are retrieved from a look up table. All algorithmic decisions made are informed by external geolocation and appropriate weather data as well as spatial resolution of the pixels. Next, memory is then allocated for the input pixel. Using the cumulative data and mask strategies the pixel is identified as either a land or water pixel if the conditions are right. 
 *Dark Target* is the specific name for land retrieval whilst *Deep Blue* is for water pixels. From the look up table, atmospheric or sun glint strategies fork the algorithm for accurate AOD retrieval/calculation. Quality is then screened for the pixels samples. Artifacts like cirrus clouds, snow/ice, sun glint and shallow water have a direct effect on the confidence of the observed AOD data. Finally, the output value of the pixel is recorded and the algorithmic loop starts over again the input pixel stage. 
 
@@ -61,8 +61,8 @@ MATLAB's toolbox on the other hand requires an active license and is best expres
  
 Thankfully, it is completely possible to use the MATLAB engine within our python scripts and embed calls to MATLAB's image processing toolbox as needed. This strategy gives us flexibility if we run into features not available in either environment. For further information find a working example in the hyperspectral.py script in this repository.
 
-For machine learning purposes and for spectral signature classification we can also go the route of using [OpenCV's C++ API](). This approach is ideal for performance purposes, given the density of hyperspectral data. OpenCV has a multitude of feature extraction functinalities and is as low-level as you can get regarding data bit level data manipulation. Also, if need to conform our code to the hardware we are using (i.e. vectorization) OpenCV is the way to go. Furthermore, it has a huge community of contributors and industry professionals in the computer vision field. 
-Novelly, regarding voxel data we could look into OpenVDB.
+For machine learning purposes and for spectral signature classification we can also go the route of using [OpenCV's C++ API](https://docs.opencv.org/4.x/d9/df8/tutorial_root.html). This approach is ideal for performance purposes, given the density of hyperspectral data. OpenCV has a multitude of feature extraction functionalities and is as low-level as you can get regarding data bit level data manipulation. Also, if need to conform our code to the hardware we are using (i.e. vectorization) OpenCV is the way to go. Furthermore, it has a huge community of contributors and industry professionals in the computer vision field. 
+Novelly, regarding voxel data we could look into OpenVDB. OpenVDB is designed for constant-time random and sequential access to voxels (i.e. it's very fast). The API also exposes various topological operations for masking and data shaping that could directly serve our image processing pipeline. 
 
 
 
