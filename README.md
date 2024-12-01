@@ -5,12 +5,11 @@ In essence, aerosol optical depth is the measurement of various aerosols within 
 
 The first logical step in generating AOD is through the Beer-Lambert-Law.
 
-$$V_{\lambda} = V$$
+$$V(\lambda) = V_o(\lambda)d^2 exp[-t(\lambda)_{TOT} * m]$$
 
+V is the voltage at the specific wavelength $$\lambda$$, while $$V_o$$ is the voltage from space multiplied against the ratio of actual earth to sun distance. Most importantly $$t_{TOT}$$ is the total optical depth and m represents the air mass.
 
-
-With the goal of extracting information solely targeting aerosol content, several other atmospheric elements need to subtracted from the initial *total* measurement. 
-
+With the goal of extracting information solely targeting aerosol content, several other atmospheric elements need to subtracted from the initial *total* measurement. From the total value the following componenents are substracted: water vapor, Rayleigh sky scattering, oxygen, carbon dixoide, nitrogen dixoide, and methane. This gives us the final total aerosol measurement for the given wavelength. 
 
 Finally, we consider the *angstrom parameter*. This will allow us to discern the size distribution of aerosol in our results. If we take the first derivative of the logarithmic ratio of the above aerosol *total* measurement and the given wavelength we get the target angstrom parameter, typically referred to as $$\alpha$$. Values of $$\alpha$$ $$\gt$$ 2.0 show us finer particulates, while $$\alpha$$ being close to zero alerts us to the presence of coarse particulates. Within the field, the angstrom parameter is also called aerosol particle size parameter (APSP). APSP ultimately formalizes the dependence of AOD on wavelength. 
 
@@ -21,9 +20,7 @@ Aerosol optical depth is indispensable regarding matters of climate data and ana
 
 #### Satellite Measurement Considerations and Resolution
 
-Satellite measurement of aerosol optical depth gives us all the benefits of *remote sensing* of data and can be enhanced by auxiliary on site scientific data collected on land. For traditional AOD algorithms, we will concern ourself just with optical sensing versus other modalities that can be measured via satellite. 
-
-In the context of satellites, we need to introduce some specific vernacular to clarify mission requirements. Specifically *resolution* refers to a class of characteristics to describe the nature and integrity of our data. 
+Satellite measurement of aerosol optical depth gives us all the benefits of *remote sensing* of data and can be enhanced by auxiliary on site scientific data collected on land. For traditional AOD algorithms, we will concern ourself just with optical sensing versus other modalities that can be measured via satellite. In the context of satellites, we need to introduce some specific vernacular to clarify mission requirements. Specifically *resolution* refers to a class of characteristics to describe the nature and integrity of our data. 
 
 Out of the various types of resolution (spatial, temporal, spectral, radiometric), temporal resolution is integral to ensuring fidelity of the AOD capture. Temporal resolution is the interval of satellite overflights. For the AOD algorithm, sun reflectance is a key component so the temporal resolution would ideally be fitted for the mission requirements. For goals described in the practical uses section, revisiting the same global area is most likely needed for salient scientific observations. The reliance on solar radiation characterizes the AOD remote sensing approach as *passive* instead of *active*.
 
