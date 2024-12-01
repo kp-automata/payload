@@ -58,8 +58,7 @@ For machine learning purposes and for spectral signature classification we can a
 
 #### Additional Resources
 - [EPS Aerosol Optical Depth (AOD) Algorithm
-Theoretical Basis Document](https://www.star.nesdis.noaa.gov/jpss/documents/ATBD/ATBD_EPS_Aerosol_AOD_v3.4.pdf) NOAA NESDIS CENTER for SATELLITE APPLICATIONS and
-RESEARCH 
-- [A VERIFICATION OF AEROSOL OPTICAL DEPTH RETRIEVAL USING THE TERRA SATELLITE](https://archive.org/details/averificationofa109457321/page/n3/mode/2up) Naval Postgraduate School Thesis by Brett D. Cimbora
-- [PRACTICAL APPROACH FOR HYPERSPECTRAL IMAGE PROCESSING IN PYTHON](https://isprs-archives.copernicus.org/articles/XLII-3/45/2018/isprs-archives-XLII-3-45-2018.pdf) The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences
+Theoretical Basis Document](https://www.star.nesdis.noaa.gov/jpss/documents/ATBD/ATBD_EPS_Aerosol_AOD_v3.4.pdf) NOAA Nesdis Center for Satellite Applications and Research
+- [A Verification OF Aersol Optical Depth Retrieval Using the Terra Satalleite](https://archive.org/details/averificationofa109457321/page/n3/mode/2up) Naval Postgraduate School Thesis by Brett D. Cimbora
+- [Practical Approach for Hyperspectral Image Processing in Python](https://isprs-archives.copernicus.org/articles/XLII-3/45/2018/isprs-archives-XLII-3-45-2018.pdf) The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences
   
