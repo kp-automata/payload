@@ -6,12 +6,14 @@ Requires valid matlab license instance. For additional
 requirements see requirements.txt
 
 https://gitlab.citius.gal/hiperespectral/ChangeDetectionDataset
+
+Spectral function just shows the some example data manipulation using SPy
 """
 import matlab.engine
+import spectral.io.envi as envi
+import torch
 
-
-
-def main():
+def run_engine():
     # Start matlab engine
     core = matlab.engine.start_matlab()
 
@@ -72,5 +74,28 @@ def main():
     """
     core.eval(matlab_code, nargout=0)
 
+def spectral():
+    data = envi.open('19920612_AVIRIS_IndianPine_Site3.hdr', '19920612_AVIRIS_IndianPine_Site3.tif')
+    print(f"Metadata for Indian Pine dataset: {data}")
+
+    # Memmap version of data
+    # Good for very large data set, as only parts are loaded into memory
+    memmap = data.open_memmap()
+
+    # Dictionary of hyperspectral band data
+    bands = {}
+    for band in range(data.nbands):
+        bands[band] = data.read_band(band)
+
+    print(f"Example {type(bands[1])} dictionary contents: {bands[1]}")
+    # PyTorch tensor of the mmmap data
+    tensor = torch.Tensor(memmap.copy())
+    print(f" Example tensor histogram: {tensor.histogram()}")
+
+
 if __name__ == "__main__":
-    main()
+    try:
+        run_engine()
+    except matlab.engine.EngineError:
+        print(f"Skipping matlab engine init, no valid server found")
+    spectral()
