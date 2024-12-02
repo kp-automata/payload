@@ -9,12 +9,12 @@ $$V(\lambda) = V_o(\lambda)d^2 exp[-t(\lambda)_{TOT} * m]$$
 
 V is the voltage at the specific wavelength $$\lambda$$, while $$V_o$$ is the voltage from space multiplied against the ratio of actual earth to sun distance. Most importantly $$t_{TOT}$$ is the total optical depth and m represents the air mass.
 
-With the goal of extracting information solely targeting aerosol content, several other atmospheric elements need to subtracted from the initial *total* measurement. From the total value the following componenents are substracted: water vapor, Rayleigh sky scattering, oxygen, carbon dixoide, nitrogen dixoide, and methane. This gives us the final total aerosol measurement for the given wavelength. 
+With the goal of extracting information solely targeting aerosol content, several other atmospheric elements need to subtracted from the initial *total* measurement. From the total value the following components are subtracted: water vapor, Rayleigh sky scattering, oxygen, carbon dixoide, nitrogen dixoide, and methane. This gives us the final total aerosol measurement for the given wavelength. 
 
 Finally, we consider the *angstrom parameter*. This will allow us to discern the size distribution of aerosol in our results. If we take the first derivative of the logarithmic ratio of the above aerosol *total* measurement and the given wavelength we get the target angstrom parameter, typically referred to as $$\alpha$$. Values of $$\alpha$$ $$\gt$$ 2.0 show us finer particulates, while $$\alpha$$ being close to zero alerts us to the presence of coarse particulates. Within the field, the angstrom parameter is also called aerosol particle size parameter (APSP). APSP ultimately formalizes the dependence of AOD on wavelength. 
 
 
-### Practical Uses for Aersol Optical Depth
+### Practical Uses for Aerosol Optical Depth
 Aerosol optical depth is indispensable regarding matters of climate data and analysis—especially if we want to make statements regarding the overall aerosol effect on climate. This epistemological goal requires a formal method to distinguish natural and anthropogenic aerosols. The spatial distribution discerned from aerosol optical depth as well as the separation of particle size from the angstrom parameter is optimal for these types of statements. Furthermore, AOD data gathered via remote sensing allows the collection of concrete evidence supporting claims that entities are emitting pollutants into the atmosphere. For example, the [burning of biomass](https://aeronet.gsfc.nasa.gov/new_web/PDF/1999JD900923.pdf) in the context of agriculture practices could be monitored and analyzed after the fact via AOD collection. 
 
 
