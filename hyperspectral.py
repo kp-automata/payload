@@ -5,8 +5,6 @@ toolbox source code.
 Requires valid matlab license instance. For additional
 requirements see requirements.txt
 
-https://gitlab.citius.gal/hiperespectral/ChangeDetectionDataset
-
 Spectral function just shows the some example data manipulation using SPy
 """
 import matlab.engine
@@ -18,6 +16,8 @@ def run_engine():
     core = matlab.engine.start_matlab()
 
     # Sample data
+    # Would have included in repo, but github has size limits.
+    # See https://gitlab.citius.gal/hiperespectral/ChangeDetectionDataset
     first = "BayArea2013PV.raw"
     second = "BayArea2015PV.raw"
 
@@ -75,6 +75,8 @@ def run_engine():
     core.eval(matlab_code, nargout=0)
 
 def spectral():
+    # Find Indian Pine dataset here: https://purr.purdue.edu/publications/1947/1
+    # Used gdal from osgeo to create an hdr version for envi analysis. 
     data = envi.open('19920612_AVIRIS_IndianPine_Site3.hdr', '19920612_AVIRIS_IndianPine_Site3.tif')
     print(f"Metadata for Indian Pine dataset: {data}")
 
